@@ -73,7 +73,33 @@ Download the zip file first to use this library and uncompress it to a folder na
  *        Voltage value, range 0-vRef, unit millivolt.
  */
   void outputVoltageEEPROM(uint16_t voltage);
-
+/* 
+ *@brief  Output a sine wave.
+ *    
+ *@param  amp:
+ *        amp value, Output sine wave amplitude range 0-5000mv
+ *        freq:
+ *        freq value,Output sine wave frequency
+ *        offset:
+ *        offset value,Output sine wave DC offset
+ *
+ */
+  void outputSin(uint16_t amp, uint16_t freq, uint16_t offset);
+ /* 
+ *@brief  Output a sine wave.
+ *    
+ *@param  amp:
+ *        amp value, Output triangular wave amplitude range 0-5000mv
+ *        freq:
+ *        freq value,Output the triangle wave frequency
+ *        offset:
+ *        offset value,Output the DC offset of the triangle wave
+ *        dutyCycle:
+ *        dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
+ *                  Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
+ *
+ */
+  void outputTriangle(uint16_t amp, uint16_t freq, uint16_t offset, uint8_t dutyCycle);
 
 ```
 

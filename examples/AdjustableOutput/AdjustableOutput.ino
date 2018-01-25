@@ -31,7 +31,7 @@ void setup(void) {
    * MCP4725A0_IIC_Address0 -->0x60
    * MCP4725A0_IIC_Address1 -->0x61
    */
-  DAC.init(MCP4725A0_IIC_Address1, REF_VOLTAGE);
+  DAC.init(MCP4725A0_IIC_Address0, REF_VOLTAGE);
   Serial.println("Please input voltage...");
   
   /* If you don't set it, the default is normal mode. */
