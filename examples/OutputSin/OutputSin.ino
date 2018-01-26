@@ -14,7 +14,6 @@
  * date  2018-1-25
  */
 #include "DFRobot_MCP4725.h"
-#include <TimerOne.h>
 #define  REF_VOLTAGE    5000
 
 DFRobot_MCP4725 DAC;
@@ -30,6 +29,6 @@ void setup(void) {
 }
 
 void loop(void) {
-  /*Output a magnitude of 5000mv, the frequency of 1HZ, DC offset 2500mv sine wave*/
-  DAC.outputSin(5000,1,2500);
+  /*Output a magnitude of 5000mv, the frequency of 10HZ, DC offset 2500mv sine wave*/
+  DAC.outputSin(2500,10,2500);
 }

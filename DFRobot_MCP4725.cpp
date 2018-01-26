@@ -242,7 +242,7 @@ void DFRobot_MCP4725::outputTriangle(uint16_t amp, uint16_t freq, uint16_t offse
     if(dutyCycle<0){
         dutyCycle=0;
     }
-    up_num = (2*num)/(100/dutyCycle);
+    up_num = (2*num)*((float)dutyCycle/100);
     down_num = ((2*num) - up_num);
 #ifdef TWBR
     uint8_t twbrback = TWBR;
@@ -254,9 +254,9 @@ void DFRobot_MCP4725::outputTriangle(uint16_t amp, uint16_t freq, uint16_t offse
     for (counter = 0; counter < (maxV-(maxV/up_num)-1); counter+=(maxV/up_num))
     {
         starttime = micros();
-        enterV=counter+offset;
-        if(enterV > (maxV-(maxV/up_num)-1)){
-            enterV = (maxV-(maxV/up_num)-1);
+        enterV=counter+(offset*(4096/(float)_refVoltage));
+        if(enterV > 4095){
+            enterV = 4095;
         }else if(enterV < 0){
             enterV = 0;
         }
@@ -275,9 +275,9 @@ void DFRobot_MCP4725::outputTriangle(uint16_t amp, uint16_t freq, uint16_t offse
     for (counter = maxV-1; counter > (maxV/down_num); counter-=(maxV/down_num))
     {
         starttime = micros();
-        enterV=counter+offset;
-        if(enterV > (maxV-1)){
-            enterV = (maxV-1);
+        enterV=counter+(offset*(4096/(float)_refVoltage));
+        if(enterV > 4095){
+            enterV = 4095;
         }else if(enterV < 0){
             enterV = 0;
         }
@@ -310,7 +310,7 @@ void DFRobot_MCP4725::outputSin(uint16_t amp, uint16_t freq, uint16_t offset)
     TWBR = ((F_CPU / 400000L) - 16) / 2; // Set I2C frequency to 400kHz
 #endif
     int16_t data = 0;
-    //Wire.setClock(400000);
+	
     if(freq < 8){
         num = 512;
     }else if( 8 <= freq && freq <= 16){
@@ -322,32 +322,34 @@ void DFRobot_MCP4725::outputSin(uint16_t amp, uint16_t freq, uint16_t offset)
     }else{
         num = 32;
     }
+    if(freq > 100){
+        freq = 100;
+    }
     frame = 1000000/(freq*num);
     for(int i=0;i<num;i++){
         
-        //data =amp*(float)sin(i*(PI/180))+offset*2;
         starttime = micros();
         switch(num){
             case 512:
-                data = (pgm_read_word(&(DACLookup_FullSine_9Bit[i]))/(float)_refVoltage)*amp-2047;
+                data = ((int16_t)(pgm_read_word(&(DACLookup_FullSine_9Bit[i])) - 2047)*(amp/(float)_refVoltage))*2;
                 break;
             case 256:
-                data = (pgm_read_word(&(DACLookup_FullSine_8Bit[i]))/(float)_refVoltage)*amp-2047;
+                data = ((int16_t)(pgm_read_word(&(DACLookup_FullSine_8Bit[i])) - 2047)*(amp/(float)_refVoltage))*2;
                 break;
             case 128:
-                data = (pgm_read_word(&(DACLookup_FullSine_7Bit[i]))/(float)_refVoltage)*amp-2047;
+                data = ((int16_t)(pgm_read_word(&(DACLookup_FullSine_7Bit[i])) - 2047)*(amp/(float)_refVoltage))*2;
                 break;
             case 64:
-                data = (pgm_read_word(&(DACLookup_FullSine_6Bit[i]))/(float)_refVoltage)*amp-2047;
+                data = ((int16_t)(pgm_read_word(&(DACLookup_FullSine_6Bit[i])) - 2047)*(amp/(float)_refVoltage))*2;
                 break;
             case 32:
-                data = (pgm_read_word(&(DACLookup_FullSine_5Bit[i]))/(float)_refVoltage)*amp-2047;
+                data = ((int16_t)(pgm_read_word(&(DACLookup_FullSine_5Bit[i])) - 2047)*(amp/(float)_refVoltage))*2;
                 break;
             default:
-                data = (pgm_read_word(&(DACLookup_FullSine_5Bit[i]))/(float)_refVoltage)*amp-2047;
+                data = ((int16_t)(pgm_read_word(&(DACLookup_FullSine_5Bit[i])) - 2047)*(amp/(float)_refVoltage))*2;
                 break;
         }
-        data = data+(offset/(float)amp)*4095;
+        data = data+(offset*(4096/(float)_refVoltage));
         if(data <= 0){
             data=0;
         }

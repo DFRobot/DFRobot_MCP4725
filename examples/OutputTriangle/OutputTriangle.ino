@@ -29,8 +29,8 @@ void setup(void) {
 }
 
 void loop(void) {
-  /*Output amplitude 5000mv, frequency 1HZ, 
+  /*Output amplitude 5000mv, frequency 10HZ, 
    *the rise of the entire cycle accounted for 50% of the DC offset 0mv triangular wave.
    */
-  DAC.outputTriangle(5000,1,0,50);
+  DAC.outputTriangle(5000,10,0,50);
 }
