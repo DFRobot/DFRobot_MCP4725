@@ -145,6 +145,17 @@ const PROGMEM uint16_t DACLookup_FullSine_9Bit[512] =
   1847, 1872, 1897, 1922, 1948, 1973, 1998, 2023
 };
 
+bool DFRobot_MCP4725::check_mcp4725()
+{
+    uint8_t error;
+    Wire.beginTransmission(_IIC_addr);
+    error = Wire.endTransmission();
+    if(error == 0){
+        return true;
+    }else{
+        return false;
+    }
+}
 void DFRobot_MCP4725::init(uint8_t addr, uint16_t vRef) 
 {
   byte error;
@@ -154,7 +165,8 @@ void DFRobot_MCP4725::init(uint8_t addr, uint16_t vRef)
   Wire.begin();
   Wire.beginTransmission(_IIC_addr);
      
-  error = Wire.endTransmission();
+  Wire.endTransmission();
+  /*
   while(error)
   {
      Wire.beginTransmission(_IIC_addr);
@@ -163,6 +175,7 @@ void DFRobot_MCP4725::init(uint8_t addr, uint16_t vRef)
      Serial.println("ERROR! Not found I2C device address ");
      delay(500);
   }
+  */
 }
 
 void DFRobot_MCP4725::setMode(uint8_t powerMode)
@@ -208,9 +221,7 @@ void DFRobot_MCP4725::outputVoltageEEPROM( uint16_t voltage)
     data = (uint16_t)(((float)_voltage / _refVoltage) * 4095);
   
     Wire.beginTransmission(_IIC_addr);
-  
     Wire.write(MCP4725_WriteEEPROM_CMD | (_PowerMode << 1));
-
     Wire.write(data / 16);
     Wire.write((data % 16) << 4);
     Wire.endTransmission();

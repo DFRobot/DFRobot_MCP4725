@@ -85,6 +85,8 @@ class DFRobot_MCP4725{
  *
  */
   void outputTriangle(uint16_t amp, uint16_t freq, uint16_t offset, uint8_t dutyCycle);
+  
+  bool check_mcp4725();
 
  private:
   uint8_t  _IIC_addr;
