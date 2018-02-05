@@ -33,6 +33,38 @@ Run the demo:
 $> python OutputVoltage.py
 
 ```
+## Methods
+
+```C++
+/*
+ * @brief Set the IIC address
+ *        addr = 0x60 or 0x61
+ */
+def setAddr_MCP4725(self,addr);
+
+/*
+ * @brief Setting the base voltage of DAC must equal the power supply voltage,
+ *        and the unit is millivolt
+ */
+def set_refVoltage(self,vol);
+
+/*
+ * @brief Output voltage value vol mV
+ */
+def outputVoltage(self,vol);
+
+/*
+ * @brief Output voltage value vol mv and write to the EEPROM,
+ *        meaning that the DAC will retain the current voltage output
+ *        after power-down or reset
+ */
+def outputVoltageEEPROM(self,vol);
+
+/*
+ * @brief Get the input voltage value
+ */
+def inputVoltage(self);
+```
 
 ## Credits
 
