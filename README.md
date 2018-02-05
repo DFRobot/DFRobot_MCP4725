@@ -42,7 +42,7 @@ Download the zip file first to use this library and uncompress it to a folder na
  * @param addr:
  *        Init the IIC address.
  *        vRef:
- *        Setting the base voltage of DAC must equal the power supply voltage, and the unit is millivolt.
+ *        The DAC base voltage setting must be equal to the power supply, and the unit is millivolt.
  */
   void init(uint8_t addr, uint16_t vRef);  
 /*
