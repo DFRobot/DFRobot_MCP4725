@@ -16,12 +16,13 @@ Provides an Raspberry pi library for reading and interpreting Bosch MCP4725 data
 
 Download and install smbus library on Raspberry pi. Steps to install smbus are provided at:
 
-https://pypi.python.org/pypi/smbus-cffi/0.5.1 Download (or git pull) the code in pi. 
-The Raspberry pi i2c1 and the board's i2c interface connected.
+$> sudo apt-get install -y python-smbus
+$> sudo apt-get install -y i2c-tools
+
 Run the program:
 
 ```cpp
-
+ 
 $> python DFRobot_MCP4725.py
 
 ```

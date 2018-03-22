@@ -1,5 +1,5 @@
 /*
- * file AdjustableOutput.ino
+ * file JustableOutput.ino
  *
  * @ https://github.com/DFRobot/DFRobot_MCP4725
  *
@@ -13,6 +13,7 @@
  * version  V0.1
  * date  2018-1-15
  */
+#include "Wire.h"
 #include "DFRobot_MCP4725.h"
 #include <stdlib.h>
 

@@ -13,7 +13,9 @@
  * version  V0.1
  * date  2018-1-25
  */
+#include "Wire.h"
 #include "DFRobot_MCP4725.h"
+
 #define  REF_VOLTAGE    5000
 
 DFRobot_MCP4725 DAC;
