@@ -158,6 +158,8 @@ class MCP4725():
 			dutyCycle = 0
 		up_num = (2*num)*(float(dutyCycle)/100)
 		down_num = ((2*num) - up_num)
+		if up_num  == 0:
+				up_num = 1
 		for i in range(0,(maxV-int(maxV/up_num)-1),int(maxV/up_num)):
 			starttime = datetime.datetime.now()
 			enterV = i + offset
@@ -173,7 +175,7 @@ class MCP4725():
 				looptime = (endtime - starttime).microseconds
 		for i in range(0,int(down_num-1)):
 			starttime = datetime.datetime.now()
-			enterV = maxV-1-(i*int(maxV/down_num))
+			enterV = maxV-1-(i*int(maxV/down_num))+offset
 			if enterV > voltage_G:
 				enterV = voltage_G
 			elif enterV < 0:
