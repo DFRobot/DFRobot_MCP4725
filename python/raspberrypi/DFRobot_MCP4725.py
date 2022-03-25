@@ -85,26 +85,59 @@ FullSine8Bit = [
   1648, 1697, 1747, 1797, 1847, 1897, 1947, 1997]
 class MCP4725():
 	def setAddr_MCP4725(self,addr):
+		'''
+			@fn setAddr_MCP4725
+			@brief init MCP4725
+			@param addr Init the IIC address.
+		'''
 		global addr_G
 		addr_G = addr	
-	def set_refVoltage(self,vol):
+	def set_ref_voltage(self,vol):
+		'''
+			@fn set_ref_voltage
+			@brief Setting the base voltage of DAC must equal the power supply voltage, and the unit is millivolt
+			@param  vol Voltage value, range 0-5000, unit millivolt.
+		'''
 		global voltage_G
 		voltage_G = vol	
-	def outputVoltage(self,vol):
+	def output_voltage(self,vol):
+		'''
+			@fn output_voltage
+			@brief Output voltage value range 0-5000mv.
+			@param  vol Voltage value, range 0-5000, unit millivolt.
+		'''
 		global addr_G	
 		global voltage_G
 		bus.write_word_data(addr_G,MCP4725_Write_CMD | (MCP4725_NORMAL_MODE<<1) ,int((vol/float(voltage_G))*255))
-	def outputVoltageEEPROM(self,vol):
+	def output_voltage_EEPROM(self,vol):
+		'''
+			@fn output_voltage_EEPROM
+			@brief  Output voltage value range 0-5000mv and write to the EEPROM,
+   			@n      meaning that the DAC will retain the current voltage output
+   			@n      after power-down or reset.
+			@param  vol Voltage value, range 0-5000, unit millivolt.
+		'''
 		global addr_G
 		global voltage_G
 		bus.write_word_data(addr_G,MCP4725_WriteEEPROM_CMD | (MCP4725_NORMAL_MODE<<1) ,int((vol/float(voltage_G))*255))
-	def inputVoltage(self):
+	def input_voltage(self):
+		'''
+			@fn input_voltage
+			@brief Get the input voltage value
+		'''
 		global OutVol_G
 		OutVol_G = int(input("Please input voltage = "))
 		while OutVol_G > 5000 :
 			OutVol_G = int(input("Please input voltage = "))
 		return OutVol_G
-	def outputSin(self,amp,freq,offset):
+	def output_sin(self,amp,freq,offset):
+		'''
+			@fn outputSin
+   			@brief  Output a sine wave.
+   			@param  amp amp value, Output sine wave amplitude range 0-5000mv
+   			@param  freq freq value,Output sine wave frequency
+   			@param  offset offset value,Output sine wave DC offset 
+		'''
 		global addr_G
 		global voltage_G
 		if(freq < 6):
@@ -143,8 +176,17 @@ class MCP4725():
 			while looptime <= frame:
 				endtime = datetime.datetime.now()
 				looptime = (endtime - start).microseconds
-	def outputTriangle(self,amp,freq,offset,dutyCycle):
-		maxV = amp;
+	def output_triangle(self,amp,freq,offset,dutyCycle):
+		'''
+			@fn outputTriangle
+   			@brief  Output a sine wave.    
+   			@param  amp amp value, Output triangular wave amplitude range 0-5000mv
+   			@param  freq freq value,Output the triangle wave frequency
+   			@param  offset offset value,Output the DC offset of the triangle wave
+   			@param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
+   			@n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
+		'''
+		maxV = amp
 		if freq > 20:
 			num = 16
 		elif freq >= 11 and freq<=20:

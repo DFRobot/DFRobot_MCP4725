@@ -1,17 +1,12 @@
-/*
- * file OutputVoltage.ino
- *
- * @ https://github.com/DFRobot/DFRobot_MCP4725
- *
- * connect MCP4725 I2C interface with your board (please reference board compatibility)
- *
- * Output a constant voltage value and print through the serial port.
- *
- * Copyright   [DFRobot](http://www.dfrobot.com), 2016
- * Copyright   GNU Lesser General Public License
- *
- * version  V0.1
- * date  2018-1-15
+/*!
+ * @file OutputVoltage.ino
+ * @brief Output a constant voltage value and print through the serial port.
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license     The MIT License (MIT)
+ * @author [TangJie]](jie.tang@dfrobot.com)
+ * @version  V1.0.0
+ * @date  2018-01-15
+ * @url https://github.com/DFRobot/DFRobot_MCP4725
  */
 #include "Wire.h"
 #include "DFRobot_MCP4725.h"

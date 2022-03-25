@@ -1,4 +1,13 @@
-
+/*!
+ * @file DFRobot_MCP4725.cpp
+ * @brief MCP4725函数库类定义的实现
+ * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
+ * @license     The MIT License (MIT)
+ * @author [TangJie]](jie.tang@dfrobot.com)
+ * @version  V1.0.0
+ * @date  2018-01-15
+ * @url https://github.com/DFRobot/DFRobot_MCP4725
+ */
 #include "DFRobot_MCP4725.h"
 
 const PROGMEM uint16_t DACLookup_FullSine_5Bit[32] =
