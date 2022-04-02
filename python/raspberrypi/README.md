@@ -116,7 +116,7 @@ python3 demo_set_current.py
 
 - 2018/01/15 Version 1.0.0 released.
 - 2022/03/23 Version 1.0.1 released.
-- 
+
 ## Credits
 
 Written by DFRobot_xiaowu (xiao.wu@dfrobot.com), 2022. (Welcome to our [website](https://www.dfrobot.com/))
