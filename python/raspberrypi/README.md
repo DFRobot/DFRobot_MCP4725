@@ -1,11 +1,11 @@
 # DFRobot_MCP4725
 
-* [中文版](./README.md)
+* [中文版](./README_CN.md)
 
 MCP4725 is a 12-bit iic-driven high precision DAC module. It has an EEPROM inside, means that the DAC will retain the current voltage output after power-down or reset.
 
 
-![Product Image](../../resources/images/DFR0971.DFR0552) 
+![Product Image](../../resources/images/DFR0552.png) 
 
 ## Product Link(https://www.dfrobot.com.cn/goods-1728.html)
     SKU: DFR0552 
@@ -24,7 +24,7 @@ Provides an Arduino library for reading and interpreting Bosch MCP4725 data over
 ## Installation
 1. To use this library, first download the library file<br>
 ```python
-sudo git clone https://github.com/DFRobot/DFRobot_GP8302
+sudo git clone https://github.com/DFRobot/DFRobot_MCP4725
 ```
 2. Open and run the routine. To execute a routine demo_x.py, enter python demo_x.py in the command line. For example, to execute the demo_set_current.py routine, you need to enter :<br>
 
@@ -40,59 +40,59 @@ python3 demo_set_current.py
 
 ```python
     def setAddr_MCP4725(self,addr):
-		'''
+		'''!
 			@fn setAddr_MCP4725
 			@brief init MCP4725
 			@param addr Init the IIC address.
 		'''
 	
 	def set_ref_voltage(self,vol):
-		'''
+		'''!
 			@fn set_ref_voltage
 			@brief Setting the base voltage of DAC must equal the power supply voltage, and the unit is millivolt
 			@param  vol Voltage value, range 0-5000, unit millivolt.
 		'''
 		
 	def output_voltage(self,vol):
-		'''
+		'''!
 			@fn output_voltage
 			@brief Output voltage value range 0-5000mv.
 			@param  vol Voltage value, range 0-5000, unit millivolt.
 		'''
 
 	def output_voltage_EEPROM(self,vol):
-		'''
+		'''!
 			@fn output_voltage_EEPROM
 			@brief  Output voltage value range 0-5000mv and write to the EEPROM,
-   			@n      meaning that the DAC will retain the current voltage output
-   			@n      after power-down or reset.
+   		@n      meaning that the DAC will retain the current voltage output
+   		@n      after power-down or reset.
 			@param  vol Voltage value, range 0-5000, unit millivolt.
 		'''
 		
 	def input_voltage(self):
-		'''
+		'''!
 			@fn input_voltage
 			@brief Get the input voltage value
 		'''
 	
 	def output_sin(self,amp,freq,offset):
-		'''
+		'''!
 			@fn outputSin
-   			@brief  Output a sine wave.
-   			@param  amp amp value, Output sine wave amplitude range 0-5000mv
-   			@param  freq freq value,Output sine wave frequency
-   			@param  offset offset value,Output sine wave DC offset 
+   		@brief  Output a sine wave.
+   		@param  amp amp value, Output sine wave amplitude range 0-5000mv
+   		@param  freq freq value,Output sine wave frequency
+   		@param  offset offset value,Output sine wave DC offset 
 		'''
 
 	def output_triangle(self,amp,freq,offset,dutyCycle):
-		'''
+		'''!
 			@fn outputTriangle
-   			@brief  Output a sine wave.    
-   			@param  amp amp value, Output triangular wave amplitude range 0-5000mv
-   			@param  freq freq value,Output the triangle wave frequency
-   			@param  offset offset value,Output the DC offset of the triangle wave
-   			@param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
-   			@n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
+   		@brief  Output a sine wave.    
+   		@param  amp amp value, Output triangular wave amplitude range 0-5000mv
+   		@param  freq freq value,Output the triangle wave frequency
+   		@param  offset offset value,Output the DC offset of the triangle wave
+   		@param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
+   		@n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
 		'''
     
 ```
