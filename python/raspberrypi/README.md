@@ -8,7 +8,7 @@ MCP4725 is a 12-bit iic-driven high precision DAC module. It has an EEPROM insid
 ![Product Image](../../resources/images/DFR0552.png) 
 
 ## Product Link(https://www.dfrobot.com.cn/goods-1728.html)
-	SKU: DFR0552 
+    SKU: DFR0552 
 
 ## Table of Contents
   - [Summary](#summary)
@@ -39,62 +39,62 @@ python3 demo_set_current.py
 ## Methods
 
 ```python
-	def setAddr_MCP4725(self,addr):
-		'''!
-			@fn setAddr_MCP4725
-			@brief init MCP4725
-			@param addr Init the IIC address.
-		'''
-	
-	def set_ref_voltage(self,vol):
-		'''!
-			@fn set_ref_voltage
-			@brief Setting the base voltage of DAC must equal the power supply voltage, and the unit is millivolt
-			@param  vol Voltage value, range 0-5000, unit millivolt.
-		'''
-		
-	def output_voltage(self,vol):
-		'''!
-			@fn output_voltage
-			@brief Output voltage value range 0-5000mv.
-			@param  vol Voltage value, range 0-5000, unit millivolt.
-		'''
+  def setAddr_MCP4725(self,addr):
+    '''!
+      @fn setAddr_MCP4725
+      @brief init MCP4725
+      @param addr Init the IIC address.
+    '''
+  
+  def set_ref_voltage(self,vol):
+    '''!
+      @fn set_ref_voltage
+      @brief Setting the base voltage of DAC must equal the power supply voltage, and the unit is millivolt
+      @param  vol Voltage value, range 0-5000, unit millivolt.
+    '''
+      
+  def output_voltage(self,vol):
+    '''!
+      @fn output_voltage
+      @brief Output voltage value range 0-5000mv.
+      @param  vol Voltage value, range 0-5000, unit millivolt.
+    '''
 
-	def output_voltage_EEPROM(self,vol):
-		'''!
-			@fn output_voltage_EEPROM
-			@brief  Output voltage value range 0-5000mv and write to the EEPROM,
-   		@n      meaning that the DAC will retain the current voltage output
-   		@n      after power-down or reset.
-			@param  vol Voltage value, range 0-5000, unit millivolt.
-		'''
-		
-	def input_voltage(self):
-		'''!
-			@fn input_voltage
-			@brief Get the input voltage value
-		'''
-	
-	def output_sin(self,amp,freq,offset):
-		'''!
-			@fn outputSin
-   		@brief  Output a sine wave.
-   		@param  amp amp value, Output sine wave amplitude range 0-5000mv
-   		@param  freq freq value,Output sine wave frequency
-   		@param  offset offset value,Output sine wave DC offset 
-		'''
+  def output_voltage_EEPROM(self,vol):
+    '''!
+      @fn output_voltage_EEPROM
+      @brief  Output voltage value range 0-5000mv and write to the EEPROM,
+      @n      meaning that the DAC will retain the current voltage output
+      @n      after power-down or reset.
+      @param  vol Voltage value, range 0-5000, unit millivolt.
+    '''
+      
+  def input_voltage(self):
+    '''!
+      @fn input_voltage
+      @brief Get the input voltage value
+    '''
+  
+  def output_sin(self,amp,freq,offset):
+    '''!
+      @fn outputSin
+      @brief  Output a sine wave.
+      @param  amp amp value, Output sine wave amplitude range 0-5000mv
+      @param  freq freq value,Output sine wave frequency
+      @param  offset offset value,Output sine wave DC offset 
+    '''
 
-	def output_triangle(self,amp,freq,offset,dutyCycle):
-		'''!
-			@fn outputTriangle
-   		@brief  Output a sine wave.    
-   		@param  amp amp value, Output triangular wave amplitude range 0-5000mv
-   		@param  freq freq value,Output the triangle wave frequency
-   		@param  offset offset value,Output the DC offset of the triangle wave
-   		@param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
-   		@n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
-		'''
-	
+  def output_triangle(self,amp,freq,offset,dutyCycle):
+    '''!
+      @fn outputTriangle
+      @brief  Output a sine wave.    
+      @param  amp amp value, Output triangular wave amplitude range 0-5000mv
+      @param  freq freq value,Output the triangle wave frequency
+      @param  offset offset value,Output the DC offset of the triangle wave
+      @param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
+      @n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
+    '''
+  
 ```
 ## Compatibility
 
@@ -116,7 +116,7 @@ python3 demo_set_current.py
 
 - 2018/01/15 Version 1.0.0 released.
 - 2022/03/23 Version 1.0.1 released.
-
+- 
 ## Credits
 
 Written by DFRobot_xiaowu (xiao.wu@dfrobot.com), 2022. (Welcome to our [website](https://www.dfrobot.com/))
