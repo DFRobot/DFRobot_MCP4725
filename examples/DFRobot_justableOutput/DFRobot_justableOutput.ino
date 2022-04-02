@@ -1,5 +1,5 @@
 /*!
- * @file JustableOutput.ino
+ * @file DFRobot_justableOutput.ino
  * @brief Set DAC voltage value by serial port and print it. 
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)

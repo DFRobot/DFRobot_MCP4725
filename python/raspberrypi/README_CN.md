@@ -8,7 +8,7 @@ MCP4725是一个12位ic驱动的高精度DAC模块。 它内部有一个EEPROM�
 ![产品效果图](../../resources/images/DFR0552.png) 
 
 ## Product Link(https://www.dfrobot.com.cn/goods-1728.html)
-    SKU: DFR0552 
+	SKU: DFR0552 
 
 ## Table of Contents
   - [概述](#概述)
@@ -40,7 +40,7 @@ python3 demo_set_current.py
 ## 方法
 
 ```python
-    def setAddr_MCP4725(self,addr):
+	def setAddr_MCP4725(self,addr):
 		'''!
 			@fn setAddr_MCP4725
 			@brief 初始化 MCP4725
@@ -95,7 +95,7 @@ python3 demo_set_current.py
    		@param  dutyCycle dutyCycle值，设置三角波上升的百分比占整个周期的百分比。
    		@n      取值范围0-100(0为只下降100，只上升段落)  
 		'''
-    
+	
 ```
 
 ## 兼容性

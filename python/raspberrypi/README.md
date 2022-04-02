@@ -8,7 +8,7 @@ MCP4725 is a 12-bit iic-driven high precision DAC module. It has an EEPROM insid
 ![Product Image](../../resources/images/DFR0552.png) 
 
 ## Product Link(https://www.dfrobot.com.cn/goods-1728.html)
-    SKU: DFR0552 
+	SKU: DFR0552 
 
 ## Table of Contents
   - [Summary](#summary)
@@ -39,7 +39,7 @@ python3 demo_set_current.py
 ## Methods
 
 ```python
-    def setAddr_MCP4725(self,addr):
+	def setAddr_MCP4725(self,addr):
 		'''!
 			@fn setAddr_MCP4725
 			@brief init MCP4725
@@ -94,7 +94,7 @@ python3 demo_set_current.py
    		@param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
    		@n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
 		'''
-    
+	
 ```
 ## Compatibility
 
