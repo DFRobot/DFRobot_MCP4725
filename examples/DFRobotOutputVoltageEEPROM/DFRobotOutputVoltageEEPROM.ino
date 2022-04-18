@@ -1,5 +1,5 @@
 /*!
- * @file DFRobot_outputVoltageEEPROM.ino
+ * @file DFRobotOutputVoltageEEPROM.ino
  * @brief Output a constant voltage value and write to the internal EEPROM.
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)

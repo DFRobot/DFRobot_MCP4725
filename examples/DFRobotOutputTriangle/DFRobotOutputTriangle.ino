@@ -1,6 +1,6 @@
 /*!
- * @file DFRobot_outputSin.ino
- * @brief 使用DAC模块输出正弦波
+ * @file DFRobotOutputTriangle.ino
+ * @brief 使用DAC模块输出三角波
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)
  * @author [TangJie]](jie.tang@dfrobot.com)
@@ -10,7 +10,6 @@
  */
 #include "Wire.h"
 #include "DFRobot_MCP4725.h"
-
 #define  REF_VOLTAGE    5000
 
 DFRobot_MCP4725 DAC;
@@ -26,6 +25,8 @@ void setup(void) {
 }
 
 void loop(void) {
-  /*Output a magnitude of 5000mv, the frequency of 10HZ, DC offset 2500mv sine wave*/
-  DAC.outputSin(2500,10,2500);
+  /*Output amplitude 5000mv, frequency 10HZ, 
+   *the rise of the entire cycle accounted for 50% of the DC offset 0mv triangular wave.
+   */
+  DAC.outputTriangle(5000,10,0,50);
 }
