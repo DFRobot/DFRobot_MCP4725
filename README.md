@@ -2,7 +2,7 @@
 
 * [中文版](./README_CN.md)
   
-MCP4725 is a 12-bit iic-driven high precision DAC module. It has an EEPROM inside, 
+MCP4725 is a 12-bit I2C-driven high precision DAC module. It has an EEPROM inside, 
 means that the DAC will retain the current voltage output after power-down or reset.
 
 ![Product Image](./resources/images/DFR0552.png)
@@ -70,9 +70,9 @@ To use this library, please download the library file first and paste it into th
   /**
    * @fn outputSin
    * @brief  Output a sine wave.
-   * @param  amp amp value, Output sine wave amplitude range 0-5000mv
-   * @param  freq freq value,Output sine wave frequency
-   * @param  offset offset value,Output sine wave DC offset
+   * @param  amp amp value, output sine wave amplitude range 0-5000mv
+   * @param  freq freq value, output sine wave frequency
+   * @param  offset offset value, output sine wave DC offset
    * @return None
    */
   void outputSin(uint16_t amp, uint16_t freq, uint16_t offset);
@@ -80,10 +80,10 @@ To use this library, please download the library file first and paste it into th
   /**
    * @fn outputTriangle
    * @brief  Output a sine wave.    
-   * @param  amp amp value, Output triangular wave amplitude range 0-5000mv
-   * @param  freq freq value,Output the triangle wave frequency
-   * @param  offset offset value,Output the DC offset of the triangle wave
-   * @param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
+   * @param  amp amp value, output triangular wave amplitude range 0-5000mv
+   * @param  freq freq value, output the triangle wave frequency
+   * @param  offset offset value, output the DC offset of the triangle wave
+   * @param  dutyCycle dutyCycle value, set the rising percentage of the triangle wave as a percentage of the entire cycle.
    * @n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
    * @return None
    */

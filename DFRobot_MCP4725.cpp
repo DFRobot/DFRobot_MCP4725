@@ -1,6 +1,6 @@
 /*!
  * @file DFRobot_MCP4725.cpp
- * @brief MCP4725函数库类定义的实现
+ * @brief Implementation of the MCP4725 function library class definition
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)
  * @author [TangJie]](jie.tang@dfrobot.com)

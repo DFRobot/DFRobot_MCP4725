@@ -1,6 +1,6 @@
 /*!
  * @file DFRobot_MCP4725.h
- * @brief MCP4725函数库类的定义及解释
+ * @brief Definition and explanation of the MCP4725 function library class
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)
  * @author [TangJie]](jie.tang@dfrobot.com)
@@ -73,9 +73,9 @@ public:
   /**
    * @fn outputSin
    * @brief  Output a sine wave.
-   * @param  amp amp value, Output sine wave amplitude range 0-5000mv
-   * @param  freq freq value,Output sine wave frequency
-   * @param  offset offset value,Output sine wave DC offset
+   * @param  amp amp value, output sine wave amplitude range 0-5000mv
+   * @param  freq freq value, output sine wave frequency
+   * @param  offset offset value, output sine wave DC offset
    * @return None
    */
   void outputSin(uint16_t amp, uint16_t freq, uint16_t offset);
@@ -83,10 +83,10 @@ public:
   /**
    * @fn outputTriangle
    * @brief  Output a sine wave.    
-   * @param  amp amp value, Output triangular wave amplitude range 0-5000mv
-   * @param  freq freq value,Output the triangle wave frequency
-   * @param  offset offset value,Output the DC offset of the triangle wave
-   * @param  dutyCycle dutyCycle value,Set the rising percentage of the triangle wave as a percentage of the entire cycle.
+   * @param  amp amp value, output triangular wave amplitude range 0-5000mv
+   * @param  freq freq value, output the triangle wave frequency
+   * @param  offset offset value, output the DC offset of the triangle wave
+   * @param  dutyCycle dutyCycle value, set the rising percentage of the triangle wave as a percentage of the entire cycle.
    * @n      Value range 0-100 (0 for only the decline of 100, only the rise of paragraph)
    * @return None
    */

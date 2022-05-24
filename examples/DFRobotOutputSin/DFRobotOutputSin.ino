@@ -1,6 +1,6 @@
 /*!
  * @file DFRobotOutputSin.ino
- * @brief 使用DAC模块输出正弦波
+ * @brief Use the DAC module to output sine wave
  * @copyright   Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @license     The MIT License (MIT)
  * @author [TangJie]](jie.tang@dfrobot.com)
